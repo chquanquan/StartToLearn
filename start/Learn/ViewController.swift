@@ -178,6 +178,7 @@ class ViewController: UIViewController {
         updateTotalLabel(time_second: 0)
         UserDefaults.standard.set(0, forKey: totalTimeKey)
         setBeginDate(isReset: true)
+        totalTime = 0
     }
     
     override func didReceiveMemoryWarning() {
