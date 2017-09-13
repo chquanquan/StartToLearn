@@ -6,6 +6,10 @@
 //  Copyright © 2017年 chq.Co.Ltd. All rights reserved.
 //
 
+
+/***********       如果你觉得还不错, 来个star 鼓励一下! 谢谢!!!      *****************/
+//https://github.com/chquanquan/start
+
 import UIKit
 
 enum AppIcon: String {
