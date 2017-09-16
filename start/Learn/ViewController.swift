@@ -86,7 +86,10 @@ class ViewController: UIViewController {
     func updateCountLabel() {
         if isStartCount() {
             let beginTime = UserDefaults.standard.double(forKey: beginTimeKey)
-            let interval = Date().timeIntervalSince1970 - beginTime
+            var interval = Date().timeIntervalSince1970 - beginTime
+            if interval > 86398 {
+                interval = 86398
+            }
             todayCountLabel.start(atTime: interval)
             countButton.isSelected = true
         }
@@ -157,7 +160,10 @@ class ViewController: UIViewController {
         GRView.isUserInteractionEnabled = false
         let endTime = Date()
         todayCountLabel.pause()
-        let timeInternal = endTime.timeIntervalSince1970 - getStartTime()
+        var timeInternal = endTime.timeIntervalSince1970 - getStartTime()
+        if timeInternal > 86399 {
+            timeInternal = 86399
+        }
         print("本次学习\(timeInternal)")
         totalTime = totalTime + timeInternal
         addTimeAnimation(aView: todayCountLabel)
